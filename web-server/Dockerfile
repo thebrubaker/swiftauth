@@ -1,2 +1,5 @@
 FROM nginx:latest
-COPY default.conf /etc/nginx/conf.d/
+WORKDIR /www/public
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY favicon.ico .
+RUN touch /www/public/index.php
